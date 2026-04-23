@@ -22,13 +22,23 @@ The architecture the brand actually wants: the brand is the **frame**, not the c
 
 The combat palette is **out of brand scope**. It lives inside the frame but isn't part of the brand color spec. The brand palette constrains itself (ember + paper + four semantic tokens); the combat palette is intentionally more diverse — muted-but-contrasty, retro-voxel-coded, bright without being childish. When combat-palette decisions need to be made, they happen in a separate spec downstream of this one.
 
-## Why dithering / pixel-gradients are a brand device
+## Why dithering is the gradient rendering technique
 
-The logomark is pixel art. The combat mode is voxel-rendered. Both sit in the same craft-computational aesthetic lineage — which the brand frame otherwise underrepresents. Adding **ordered dithering** as an explicit brand device does two jobs at once: it reinforces the pixel/voxel register *in the frame itself*, so the frame acknowledges the game without shouting, and it gives the brand a texture it can use where a solid color or the wordmark don't fit — hero art, marketing backgrounds, section dividers, loading states, transitions between narrative and combat mode.
+The logomark is pixel art. The combat mode is voxel-rendered. Both sit in the same craft-computational aesthetic lineage — which the brand frame otherwise underrepresents. To acknowledge the game register in the frame without adopting the combat palette, **dithering replaces smooth interpolation anywhere a gradient would otherwise appear.** Smooth CSS / SVG gradients are forbidden anywhere in the brand. If a crossfade between two colors is needed, it is rendered as a stepped Bayer dither.
 
-Reference pin: Lucas Pope's **Return of the Obra Dinn**. 1-bit ordered dithering at a readable scale, deliberately old-tech, craft-conscious. It reads simultaneously as a game aesthetic and as a documentation aesthetic — exactly the register Mythrun wants to hold.
+This is a stronger claim than "dithering is a texture device." It means the technique is locked into every gradient moment the brand produces — hero backgrounds, section dividers, loading states, transitions between narrative and combat mode, data-visualisation gradients. The gradient *is* the dither.
 
-Dithering is restrained, not ubiquitous. Used correctly it appears in a few specific places and is instantly recognizable as a Mythrun gesture. Used incorrectly — full-page, under body text, in every composition — it becomes noise and erodes the quiet frame. See `guidelines.md` for the operational rules.
+Reference pin: Lucas Pope's **Return of the Obra Dinn**. 1-bit ordered dithering replaces smooth shading throughout the game; the distinctive look comes from the technique being applied everywhere, not from sprinkling it in. Mythrun does the same: whenever a gradient is rendered, it is rendered dithered.
+
+**Parameters (the brand's dither formula):**
+
+- **4×4 Bayer threshold matrix** — small enough to stay chunky and readable, coarser than 8×8, preserves the pixel-art register.
+- **8 px cell size at canonical scale** — each Bayer cell is one 8-pixel square. Scales proportionally for different output sizes; the grain should stay visible as grain.
+- **15% chaos** — blend of ordered Bayer (crisp) and pseudorandom noise (grain). 0% reads mechanical; 100% reads like noise; 15% is the sweet spot — breaks the perfect-grid feel without losing legibility.
+- **Vertical axis default, horizontal allowed, no radial** — vertical matches a horizon (ground above, terrain/light below). Horizontal is reserved for section-break ribbons. Radial is forbidden because it pulls toward "glow," which is the opposite of the quiet frame.
+- **Two-color ground→accent composition** — ground is always `paper-100` (light) or `paper-900` (dark); accent is a brand color (ember or the opposite paper step). No three-stop gradients.
+
+Dithering still applies *sparingly* in the sense that the brand doesn't dither every surface — most of the frame stays on solid ground. But when a gradient moment does happen, it is always dithered. There is no smooth-gradient fallback. See `guidelines.md` for the operational rules.
 
 ## Why 64 logical pixels (not 128)
 

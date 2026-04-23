@@ -14,7 +14,7 @@ Brand assets for Mythrun — AI-powered multiplayer D&D 5e platform.
 - **Canonical mark resolution:** 64 logical pixels (not 128)
 - **Two modes:** the brand is the quiet frame; narrative and combat both live inside it. Combat mode is voxel-rendered and deliberately more colorful — the combat palette is out of brand scope.
 - **Brand voice:** second-person, at-the-table (DM register) — Pope-pinned. One voice covers every subject; combat does not trigger a register shift.
-- **Texture device:** ordered dithering (8×8 Bayer, two-tone). Obra Dinn-pinned. Used sparingly.
+- **Gradients are dithered:** every gradient in the brand is a stepped 4×4 Bayer dither (8 px cell, 15% chaos, two-color ground→accent, vertical default). Smooth CSS/SVG gradients are forbidden. Obra Dinn-pinned.
 
 Never change these without updating both this file and `brand/decisions.md`.
 
@@ -48,4 +48,4 @@ Never change these without updating both this file and `brand/decisions.md`.
 - Folder structure: done (v1.0)
 - Two-modes framing: locked (v1.0)
 - Brand voice: locked (v1.0 — architecture only; final copy owned by the brand owner)
-- Texture / dithering: locked (v1.0)
+- Gradient technique (dithered): locked (v1.0)

@@ -17,7 +17,7 @@ How to use the Mythrun brand. This is the day-to-day reference; `decisions.md` e
 | Logomark (canonical) | 64-logical pixel art | `brand/logomark/64/` |
 | Favicon | 32-logical, designed-at-size | `brand/logomark/favicon/` |
 | Brand voice | Second-person, at-the-table (DM register) · Pope-pinned | `brand/brief.md` → Voice |
-| Texture device | Ordered dithering (1-bit Bayer) | Below → Texture |
+| Gradient technique | Dithered (4×4 Bayer, 8 px cell, 15% chaos, two-color) | Below → Texture |
 
 ## Color palette
 
@@ -121,38 +121,52 @@ Each lockup exists in four color variants:
 
 Note: lockup `primary` is monochrome (both elements in paper-900), not dual-color with ember mark + ink wordmark. The monochrome version reads as a unified composition; the dual-color version was tested and rejected as feeling non-cohesive.
 
-## Texture
+## Texture · dithered gradients
 
-Mythrun uses **ordered dithering** as a brand device. It's the frame's way of gesturing at the pixel/voxel aesthetic of combat mode without adopting it. Reference pin: *Return of the Obra Dinn*. Full rationale in `decisions.md` → "Why dithering / pixel-gradients are a brand device."
+Mythrun doesn't do smooth gradients. **Every gradient in the brand is rendered as a stepped Bayer dither between two colors.** Reference pin: *Return of the Obra Dinn*. Full rationale in `decisions.md` → "Why dithering is the gradient rendering technique."
 
-**Pattern.** 8×8 Bayer ordered dither matrix. Two-tone only.
+### The dither formula (locked)
 
-**Colors.**
-- Default: `paper-900` on `paper-100` — ink on cream.
-- Reverse: `paper-100` on `paper-900` — cream on charcoal.
-- Rare accent: `ember-600` on `paper-100`. Reserved for emphasis moments, used sparingly.
+| Parameter | Value |
+|-----------|-------|
+| Threshold matrix | 4×4 Bayer |
+| Cell size | 8 px at canonical scale (scale proportionally for different output sizes; grain stays visible) |
+| Chaos blend | 15% pseudorandom, 85% ordered Bayer |
+| Default axis | Vertical (ground above, accent below) |
+| Horizontal axis | Allowed for section-break ribbons |
+| Radial axis | Forbidden |
+| Composition | Two-color, ground→accent. No three-stop gradients. |
 
-**Density steps.** Constrain to **six visible steps:** `0%` (pure background), `25%`, `50%`, `75%`, `100%` (pure solid), plus `solid` as a sixth step for ramp composition. Steps correspond to Bayer threshold bands. The dither ramp is useful as a gradient device and as a quantitative axis in charts.
+### Color pairings
 
-**Cell scale.** Each Bayer cell renders at **no smaller than 3 CSS pixels** visible at display size. If the dot pattern reads as noise or stipple, the scale is wrong — scale up until the dither is legible *as dither*.
+Ground is always `paper-100` (light) or `paper-900` (dark). Accent is a brand color.
+
+- **Light → ember:** `paper-100` ground dithering to `ember-600`. The canonical warm gradient.
+- **Light → ink:** `paper-100` ground dithering to `paper-900`. Quiet monochrome crossfade.
+- **Dark → cream (reverse):** `paper-900` ground dithering to `paper-100`. Reverse / dark-mode gradient.
+
+Combinations outside these pairings — e.g. `ember` ground or semantic colors (success / warning / danger / info) — are forbidden. The brand ground is always a paper step.
 
 ### Allowed uses
 
-- Marketing hero backgrounds (behind the wordmark or stacked lockup, with clear space preserved).
-- Section dividers in long-form documents (horizontal dither bands at 25–50% density).
+- Marketing hero backgrounds (wordmark or stacked lockup placed on the pure-ground portion of the panel, above the dither band).
+- Section dividers in long-form documents (horizontal dither ribbons separating content blocks).
 - Loading and transition screens in the product.
 - Narrative-to-combat mode transitions in-product (conceptual — not yet spec'd).
-- Data visualization — dither-density as a quantitative axis in charts.
+- Data visualisation — dither-density as a quantitative axis in charts.
 - Print accents: business cards, posters, merch.
 
 ### Forbidden uses
 
+- **Smooth (CSS / SVG linear / radial) gradients anywhere in the brand.** If a crossfade is needed, it is dithered. There is no smooth-gradient fallback.
 - Under body text. Reduces legibility.
-- Behind or overlapping the wordmark, mark, or favicon. These stay on solid ground.
-- As a full-bleed pattern across every touchpoint. Restraint preserves the meaning.
-- Inside the combat-mode rendering itself. Combat has its own aesthetic; dither belongs to the brand frame.
-- In combination with other patterns, textures, or photographic imagery.
-- In semantic color ramps (success / warning / danger / info). Dither is a brand expression, not a UI-state signal.
+- Behind or overlapping the wordmark, mark, or favicon — these stay on solid ground. The lockup sits above the dither band, not inside it.
+- Radial gradients — even dithered. Radial reads as "glow," which is the opposite of the quiet frame.
+- Three-stop (or more) gradients. Two colors only.
+- `ember` as the ground color. Ground is always a paper step.
+- In semantic color ramps (success / warning / danger / info). Dithering is brand expression, not a UI-state signal.
+- Full-bleed across every touchpoint. Used sparingly — when a gradient moment is called for, not as a persistent texture.
+- Inside the combat-mode rendering itself. Combat has its own aesthetic; dithered gradients belong to the brand frame.
 
 ## Voice
 
