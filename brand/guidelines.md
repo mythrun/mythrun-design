@@ -9,8 +9,9 @@ How to use the Mythrun brand. This is the day-to-day reference; `decisions.md` e
 | Primary color (accent) | ember `#8A5A3C` | — |
 | Text / ink | paper-900 `#231B12` | — |
 | Background | paper-100 `#EFE9DC` | — |
-| Wordmark typeface | Tyma Garamont Regular (wordmark-only) | — |
-| Display / body typefaces | Not yet selected | — |
+| Wordmark typeface | Tyma Garamont Regular (wordmark-only, locked) | — |
+| Body / prose typeface | Source Serif 4 (working pairing, may revisit) | Google Fonts, OFL |
+| UI / data / mono typeface | IBM Plex Mono (working pairing, may revisit) | Google Fonts, OFL |
 | Primary lockup | stacked, ink on cream | `brand/lockups/stacked/` |
 | Secondary lockup | horizontal (mark-on-right), ink on cream | `brand/lockups/horizontal/` |
 | Logomark (canonical) | 64-logical pixel art | `brand/logomark/64/` |
@@ -41,11 +42,17 @@ Six ramps × ten steps each = 60 tokens. See `brand/palette/palette.md` for the 
 
 ## Typography
 
-**Wordmark typeface (Tyma Garamont Regular).** $49 commercial license, MyFonts. Used **only** for the "Mythrun" wordmark itself — not as a display typeface, body typeface, or general brand face. Marketing headlines, product UI, and body copy do not use Tyma Garamont. In practice the wordmark is deployed from its exports (`brand/wordmark/exports/`) rather than typeset fresh, so Tyma Garamont is effectively a wordmark-only asset.
+The typography system below is a **solid first concept, not a final decision**. It's a working pairing that's good enough to ship with — we've evaluated candidates and this one made sense — but we may revisit it once the product is in real use and we have more signal. Committing now so design and development work isn't blocked on an open typography question.
 
-**Display typeface:** not yet selected. No typeface has been committed for headlines, marketing, or product UI beyond the wordmark itself. TBD in a future decision.
+**Wordmark typeface: Tyma Garamont Regular.** $49 commercial license, MyFonts. **Locked.** Used **only** for the "Mythrun" wordmark itself — not for headlines, marketing copy, body text, or UI chrome. In practice the wordmark is deployed from its exports (`brand/wordmark/exports/`) rather than typeset fresh, so Tyma Garamont is effectively a wordmark-only asset.
 
-**Body typeface:** not yet selected. When picking body type, choose something that sits comfortably next to the Tyma wordmark in a lockup — a readable serif or a slightly humanist sans. Avoid geometric sans (Futura, Gotham-family) which clashes with Tyma's warmth. Candidates worth exploring: Söhne, Inter, system-ui stack.
+**Body / prose typeface: Source Serif 4.** Google Fonts, OFL license (no licensing friction for product or marketing). Use for long-form prose, marketing body copy, document text, and display headings until a dedicated display typeface is selected. Pairs with the Tyma wordmark by extending the literary / serif register; mood is calm, readable, warm-neutral.
+
+**UI / data / monospace typeface: IBM Plex Mono.** Google Fonts, OFL license. Use for product UI chrome (buttons, labels, nav), data readouts (rolls, state, stats), code, and any place a "computational-but-crafted" register is wanted. Not a general body face — when prose gets long, switch back to Source Serif 4.
+
+**Why this pairing.** Short version: serif body extends the literary register of the Tyma wordmark; monospace UI expresses the computational honesty of the product; the visual contrast between them mirrors Mythrun's internal separation between narrative layer (prose) and mechanical state layer (rolls, rules, system). Full rationale is in `decisions.md`.
+
+**Fira Code was considered and rejected** as the UI monospace — it's a great coding typeface but too expressive for restrained product chrome. Fira Code remains the recommended personal dev-setup monospace for the team; it's just not the product's typeface.
 
 **Wordmark-specific specs:**
 - Cap-height = 73.2% of total wordmark height (Y descender extends below baseline)

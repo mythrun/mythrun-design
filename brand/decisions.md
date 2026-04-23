@@ -48,6 +48,20 @@ The 128 and 64 marks rely on visible pixel structure (barbs, shaft, nib) for cha
 
 Considered against other Garamond revivals and general serif options. Tyma Garamont has a specific quality — warm, slightly irregular, handmade-feeling — that matches the Parchment & Ink register better than more refined digital Garamond revivals. The custom M swash extends this handmade quality into something specific to Mythrun. The 3px rightward top-shift of the M apex is an optical compensation that keeps the letterform feeling intentional at display sizes.
 
+## Why Source Serif 4 + IBM Plex Mono (working pairing)
+
+Framed explicitly as a **solid first concept**, not a final decision. The pairing was committed to so design and development work isn't blocked on an open typography question, and it may be revisited once the product is in real use and we have more signal.
+
+**Body / prose: Source Serif 4 (Google Fonts, OFL).** A serif body extends the literary register of the Tyma wordmark. Mythrun's lineage is literary-adjacent (Le Guin, Tolkien, Wolfe), and a serif body stays in that register without quoting the wordmark. Source Serif 4 is warm, readable at text sizes, and contemporary without being self-consciously "design-y." OFL licensing removes friction for product and marketing use.
+
+**UI / data / monospace: IBM Plex Mono (Google Fonts, OFL).** Monospace in the UI expresses the computational honesty of the product. Mythrun runs on structured state — character sheets, rolls, scene graphs, logs — and a monospace UI chrome makes that machinery legible rather than hiding it behind polished product-marketing typography. IBM Plex Mono is restrained, even-toned, reads neutrally at small sizes, and doesn't shout.
+
+**The pairing mirrors the product's internal structure.** Serif body = narrative layer (prose, fiction, the stuff the players experience). Monospace chrome = mechanical layer (state, rules, the stuff the system tracks). The visual contrast between the two mirrors the separation Mythrun holds between those two layers — not a stylistic quirk, but a direct expression of how the product is organized.
+
+**Fira Code was considered and rejected** for UI monospace. It's a great coding typeface, but the ligatures and slight expressiveness are too much for restrained product chrome — UI labels and data blocks don't want arrows and triple-equals ligatures. Fira Code remains the recommended personal dev-setup monospace for the team; it's just not the product's typeface.
+
+**Not yet decided:** a dedicated display typeface for large marketing headlines. Source Serif 4 at larger sizes is fine for now. If headline density becomes a problem later (Source Serif 4 can feel soft at marketing display sizes), revisit with a more characterful display serif or a condensed companion.
+
 ## Things that were considered and rejected
 
 - **Radial-symmetric mark** (circle/hexagon with internal feather): rejected for reading too much like current AI branding. Abandoned early in logomark exploration.

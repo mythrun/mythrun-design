@@ -7,7 +7,9 @@ Brand assets for Mythrun — AI-powered multiplayer D&D 5e platform.
 - **Primary color:** ember `#8A5A3C`
 - **Text/ink color:** paper-900 `#231B12`
 - **Background color:** paper-100 `#EFE9DC`
-- **Wordmark typeface:** Tyma Garamont Regular (wordmark-only; display and body typefaces are TBD)
+- **Wordmark typeface:** Tyma Garamont Regular (locked, wordmark-only)
+- **Body / prose typeface:** Source Serif 4 (Google Fonts, OFL) — working pairing, subject to future revision
+- **UI / data / monospace typeface:** IBM Plex Mono (Google Fonts, OFL) — working pairing, subject to future revision
 - **Primary lockup:** stacked (mark above wordmark), both in paper-900 on cream
 - **Canonical mark resolution:** 64 logical pixels (not 128)
 
