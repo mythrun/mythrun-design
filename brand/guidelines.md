@@ -129,9 +129,9 @@ Mythrun doesn't do smooth gradients. **Every gradient in the brand is rendered a
 
 | Parameter | Value |
 |-----------|-------|
-| Threshold matrix | 4×4 Bayer, row-phase rotated per density step so consecutive rows progress monotonically. |
+| Threshold matrix | 4×4 Bayer (standard ordered matrix, no row rotation). |
 | Cell size | Responsive to context. 6 px at hero / full-bleed scale; 8 px at preview / small-surface scale. Constant: the dither grain must stay visible at display size. If it reads as noise, scale up. |
-| Band length | **20 dithered cells.** Enough verticality for density to progress readably per row; two solid color blocks frame it. |
+| Band length | **20 dithered cells.** Two solid color blocks frame the band. |
 | Chaos blend | 15% pseudorandom, 85% ordered Bayer |
 | Default axis | Vertical (ground above, accent below) |
 | Horizontal axis | Allowed |
