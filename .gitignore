@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+
+# Illustrator
+*.ai.lock
+
+# Temp files
+*~
+*.tmp
+*.bak
