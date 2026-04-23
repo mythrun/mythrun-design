@@ -9,7 +9,8 @@ How to use the Mythrun brand. This is the day-to-day reference; `decisions.md` e
 | Primary color (accent) | ember `#8A5A3C` | — |
 | Text / ink | paper-900 `#231B12` | — |
 | Background | paper-100 `#EFE9DC` | — |
-| Display type | Tyma Garamont Regular | — |
+| Wordmark typeface | Tyma Garamont Regular (wordmark-only) | — |
+| Display / body typefaces | Not yet selected | — |
 | Primary lockup | stacked, ink on cream | `brand/lockups/stacked/` |
 | Secondary lockup | horizontal (mark-on-right), ink on cream | `brand/lockups/horizontal/` |
 | Logomark (canonical) | 64-logical pixel art | `brand/logomark/64/` |
@@ -40,9 +41,11 @@ Six ramps × ten steps each = 60 tokens. See `brand/palette/palette.md` for the 
 
 ## Typography
 
-**Display typeface:** Tyma Garamont Regular ($49 commercial license, MyFonts). Used for the wordmark, marketing headlines, and any display-scale typography.
+**Wordmark typeface (Tyma Garamont Regular).** $49 commercial license, MyFonts. Used **only** for the "Mythrun" wordmark itself — not as a display typeface, body typeface, or general brand face. Marketing headlines, product UI, and body copy do not use Tyma Garamont. In practice the wordmark is deployed from its exports (`brand/wordmark/exports/`) rather than typeset fresh, so Tyma Garamont is effectively a wordmark-only asset.
 
-**Body typeface:** not yet selected. When picking body type, choose something that pairs with Tyma Garamont at text sizes — a readable serif or a slightly humanist sans. Avoid geometric sans (Futura, Gotham-family) which clashes with Tyma's warmth. Candidates worth exploring: Söhne, Inter, system-ui stack.
+**Display typeface:** not yet selected. No typeface has been committed for headlines, marketing, or product UI beyond the wordmark itself. TBD in a future decision.
+
+**Body typeface:** not yet selected. When picking body type, choose something that sits comfortably next to the Tyma wordmark in a lockup — a readable serif or a slightly humanist sans. Avoid geometric sans (Futura, Gotham-family) which clashes with Tyma's warmth. Candidates worth exploring: Söhne, Inter, system-ui stack.
 
 **Wordmark-specific specs:**
 - Cap-height = 73.2% of total wordmark height (Y descender extends below baseline)
