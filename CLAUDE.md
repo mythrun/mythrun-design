@@ -12,6 +12,9 @@ Brand assets for Mythrun — AI-powered multiplayer D&D 5e platform.
 - **UI / data / monospace typeface:** IBM Plex Mono (Google Fonts, OFL) — working pairing, subject to future revision
 - **Primary lockup:** stacked (mark above wordmark), both in paper-900 on cream
 - **Canonical mark resolution:** 64 logical pixels (not 128)
+- **Two modes:** the brand is the quiet frame; narrative and combat both live inside it. Combat mode is voxel-rendered and deliberately more colorful — the combat palette is out of brand scope.
+- **Brand voice:** second-person, at-the-table (DM register) — Pope-pinned. One voice covers every subject; combat does not trigger a register shift.
+- **Texture device:** ordered dithering (8×8 Bayer, two-tone). Obra Dinn-pinned. Used sparingly.
 
 Never change these without updating both this file and `brand/decisions.md`.
 
@@ -41,5 +44,8 @@ Never change these without updating both this file and `brand/decisions.md`.
 - Logomark: locked (64 canonical), exports done
 - Favicon (32): locked, exports done
 - Lockups: locked, exports done
-- Guidelines doc: done (v1.0)
+- Guidelines doc: done (v1.0) — markdown + HTML
 - Folder structure: done (v1.0)
+- Two-modes framing: locked (v1.0)
+- Brand voice: locked (v1.0 — architecture only; final copy owned by the brand owner)
+- Texture / dithering: locked (v1.0)

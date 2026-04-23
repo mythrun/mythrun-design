@@ -14,6 +14,22 @@ The mark is a pixel-art quill in ember color. This works on multiple semantic la
 
 Future brand decisions should reinforce this register: craft-conscious, specifically-computational, respectful-of-narrative-tradition.
 
+## Why the brand has two modes: frame and content
+
+A Mythrun session is two games stitched together: **narrative mode** (roleplay, dialogue, description, decisions) and **combat mode** (tactical, voxel-rendered, spatial, turn-based). Early brand work over-rotated toward the narrative half — "literary, not gamey" language read as if Mythrun were a writing tool rather than a game. That was wrong. Mythrun is a game. The game has two halves. The brand has to acknowledge both.
+
+The architecture the brand actually wants: the brand is the **frame**, not the content. The frame stays quiet, muted, Parchment & Ink — all the marks, lockups, colors, and typography already specified. Inside the frame, narrative and combat content both live. Narrative content reads as an extension of the frame's quiet register. Combat content is rendered in voxel space, is deliberately more colorful and contrast-y than the frame, and fills most of the screen when active. The frame does not pretend combat doesn't exist; combat does not colonize the frame.
+
+The combat palette is **out of brand scope**. It lives inside the frame but isn't part of the brand color spec. The brand palette constrains itself (ember + paper + four semantic tokens); the combat palette is intentionally more diverse — muted-but-contrasty, retro-voxel-coded, bright without being childish. When combat-palette decisions need to be made, they happen in a separate spec downstream of this one.
+
+## Why dithering / pixel-gradients are a brand device
+
+The logomark is pixel art. The combat mode is voxel-rendered. Both sit in the same craft-computational aesthetic lineage — which the brand frame otherwise underrepresents. Adding **ordered dithering** as an explicit brand device does two jobs at once: it reinforces the pixel/voxel register *in the frame itself*, so the frame acknowledges the game without shouting, and it gives the brand a texture it can use where a solid color or the wordmark don't fit — hero art, marketing backgrounds, section dividers, loading states, transitions between narrative and combat mode.
+
+Reference pin: Lucas Pope's **Return of the Obra Dinn**. 1-bit ordered dithering at a readable scale, deliberately old-tech, craft-conscious. It reads simultaneously as a game aesthetic and as a documentation aesthetic — exactly the register Mythrun wants to hold.
+
+Dithering is restrained, not ubiquitous. Used correctly it appears in a few specific places and is instantly recognizable as a Mythrun gesture. Used incorrectly — full-page, under body text, in every composition — it becomes noise and erodes the quiet frame. See `guidelines.md` for the operational rules.
+
 ## Why 64 logical pixels (not 128)
 
 A 128-logical mark looks refined at any display size but reads less confidently as pixel art. A 64-logical mark at the same display size has pixels that are 2× chunkier, so the pixel-art register declares itself more clearly. In lockup with the wordmark, the 64 felt more "Mythrun" than the 128 — the chunky-pixel register matched the brand voice better than the fine-pixel version.
@@ -62,6 +78,18 @@ Framed explicitly as a **solid first concept**, not a final decision. The pairin
 
 **Not yet decided:** a dedicated display typeface for large marketing headlines. Source Serif 4 at larger sizes is fine for now. If headline density becomes a problem later (Source Serif 4 can feel soft at marketing display sizes), revisit with a more characterful display serif or a condensed companion.
 
+## Why the brand voice is second-person at-the-table
+
+D&D's in-game narration voice is already second-person — "you wake up in a tavern," "you roll initiative," "you turn and see the dragon." When Mythrun the product speaks to the player mid-session, that's the register it uses. When Mythrun the brand speaks to a stranger in marketing copy, it keeps that same register. The brand voice inherits the DM's voice directly; brand copy and product copy share the same tonal world, intentionally.
+
+Reference pin for the voice: **Lucas Pope** (*Obra Dinn*, *Papers Please*). Terse, dry, craft-conscious, treats the product as a made object, a bit old-fashioned. Dry wit used sparingly — never to soften or hype.
+
+**One voice covers every subject.** The same voice describes a quiet narrative moment and a tactical combat turn. Only the subject changes; the register does not. Granting combat its own voice would undo the frame-vs-content architecture — the frame is supposed to hold both halves without shifting register itself.
+
+The audience is the TTRPG craft crowd — players who already get what "craft-conscious game" means. The brand voice doesn't sell the category, doesn't translate shared vocabulary (*initiative*, *party*, *roll*, *DM*), and doesn't explain the obvious.
+
+Second-person that addresses the reader's **action** ("you roll," "you wake up") is DM register and allowed. Second-person that **presumes the reader's identity** ("as a busy professional…," "you're someone who…") is marketing register and forbidden — Mythrun does not speak in marketing register about its reader. Full operational rules in `guidelines.md`.
+
 ## Things that were considered and rejected
 
 - **Radial-symmetric mark** (circle/hexagon with internal feather): rejected for reading too much like current AI branding. Abandoned early in logomark exploration.
@@ -69,6 +97,9 @@ Framed explicitly as a **solid first concept**, not a final decision. The pairin
 - **Chunky silhouette 32 favicon**: attempted as "strip to silhouette at small sizes" per conventional wisdom, rejected because the silhouette without internal pixel detail looked generic ("tick-like"). The sparse-stroke approach preserves what makes the mark Mythrun's even at small size.
 - **Flipped quill**: considered for horizontal-lockup cleanliness but rejected because flipping propagates everywhere (once flipped, always flipped), and breaks the stacked composition's semantic alignment.
 - **Horizontal lockup as primary**: rejected in favor of stacked. The stacked composition's quill-into-word semantic reading was too valuable to demote.
+- **Fira Code as the UI monospace**: rejected because its ligatures and expressiveness are too much for restrained product chrome. Remains the recommended personal dev-setup monospace for the team; just not the product's typeface. See the typography decision for full reasoning.
+- **A separate "combat voice" as a second brand register**: rejected in favor of one-voice-every-subject. Two voices would undo the frame-vs-content architecture and double the writing work without earning its keep.
+- **Invented voice samples in the brief**: the earlier "Voice samples" block in `brief.md` was not user-authored and was removed. Voice is now spec'd as principles and rules; brand copy itself is the brand owner's to write.
 
 ## Open questions / future work
 

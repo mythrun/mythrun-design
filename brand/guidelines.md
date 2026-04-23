@@ -16,6 +16,8 @@ How to use the Mythrun brand. This is the day-to-day reference; `decisions.md` e
 | Secondary lockup | horizontal (mark-on-right), ink on cream | `brand/lockups/horizontal/` |
 | Logomark (canonical) | 64-logical pixel art | `brand/logomark/64/` |
 | Favicon | 32-logical, designed-at-size | `brand/logomark/favicon/` |
+| Brand voice | Second-person, at-the-table (DM register) · Pope-pinned | `brand/brief.md` → Voice |
+| Texture device | Ordered dithering (1-bit Bayer) | Below → Texture |
 
 ## Color palette
 
@@ -118,6 +120,79 @@ Each lockup exists in four color variants:
 - `white` — pure white on transparent (for merch contexts)
 
 Note: lockup `primary` is monochrome (both elements in paper-900), not dual-color with ember mark + ink wordmark. The monochrome version reads as a unified composition; the dual-color version was tested and rejected as feeling non-cohesive.
+
+## Texture
+
+Mythrun uses **ordered dithering** as a brand device. It's the frame's way of gesturing at the pixel/voxel aesthetic of combat mode without adopting it. Reference pin: *Return of the Obra Dinn*. Full rationale in `decisions.md` → "Why dithering / pixel-gradients are a brand device."
+
+**Pattern.** 8×8 Bayer ordered dither matrix. Two-tone only.
+
+**Colors.**
+- Default: `paper-900` on `paper-100` — ink on cream.
+- Reverse: `paper-100` on `paper-900` — cream on charcoal.
+- Rare accent: `ember-600` on `paper-100`. Reserved for emphasis moments, used sparingly.
+
+**Density steps.** Constrain to **six visible steps:** `0%` (pure background), `25%`, `50%`, `75%`, `100%` (pure solid), plus `solid` as a sixth step for ramp composition. Steps correspond to Bayer threshold bands. The dither ramp is useful as a gradient device and as a quantitative axis in charts.
+
+**Cell scale.** Each Bayer cell renders at **no smaller than 3 CSS pixels** visible at display size. If the dot pattern reads as noise or stipple, the scale is wrong — scale up until the dither is legible *as dither*.
+
+### Allowed uses
+
+- Marketing hero backgrounds (behind the wordmark or stacked lockup, with clear space preserved).
+- Section dividers in long-form documents (horizontal dither bands at 25–50% density).
+- Loading and transition screens in the product.
+- Narrative-to-combat mode transitions in-product (conceptual — not yet spec'd).
+- Data visualization — dither-density as a quantitative axis in charts.
+- Print accents: business cards, posters, merch.
+
+### Forbidden uses
+
+- Under body text. Reduces legibility.
+- Behind or overlapping the wordmark, mark, or favicon. These stay on solid ground.
+- As a full-bleed pattern across every touchpoint. Restraint preserves the meaning.
+- Inside the combat-mode rendering itself. Combat has its own aesthetic; dither belongs to the brand frame.
+- In combination with other patterns, textures, or photographic imagery.
+- In semantic color ramps (success / warning / danger / info). Dither is a brand expression, not a UI-state signal.
+
+## Voice
+
+The brand's operational voice rules. Strategic context in `brief.md` → Voice.
+
+**Default register:** second-person, present tense, at-the-table. Voice of a DM narrating a scene. The register is inherited directly from D&D's in-game narration ("you wake up in a tavern," "you roll initiative") — brand copy uses the same voice the product uses.
+
+**Reference pin:** Lucas Pope (*Obra Dinn*, *Papers Please*). Terse, dry, craft-conscious, treats the product as a made object, a bit old-fashioned. Dry wit used sparingly.
+
+**One voice, every subject.** Narrative and combat get the same register. Only the subject changes.
+
+### Allowed moves
+
+- Short sentences. One idea per sentence.
+- Specific nouns over adjectives.
+- Present tense by default.
+- Assume TTRPG literacy — don't translate *initiative*, *party*, *roll*, *scene*, *DM*.
+- Name the concrete — *the giant*, not "an encounter"; *the tavern*, not "a social space."
+- Dry wit, sparingly. Wit earns its place by being true, not by being funny.
+
+### Forbidden moves
+
+- No hype register: "powered by AI," "revolutionary," "next-generation," "ultimate," "epic."
+- No exclamation points, except inside in-game dialogue.
+- No gamer-speak, natural-20 humor, or subreddit in-jokes.
+- No first-person-plural "we" marketing. Team members speak in their own voices on social; the brand stays second-person.
+- No softening combat into "tactical encounters" or "engagement modules." Combat is combat.
+- No marketing the AI. The AI is infrastructure; the game is the product.
+- No identity-presuming second-person ("as a busy professional…," "you're someone who…"). Second-person addresses the reader's *action* ("you roll," "you wake up"), not their demographic.
+
+### Sub-modes
+
+Default is *at-the-table*. Two situational shifts:
+
+- **Session log** — retrospective, atmospheric. For taglines and evocative copy.
+- **Maker's workshop** — explanatory, documentary. For feature pages, docs, and technical explanation.
+
+### Copy ownership
+
+Voice architecture is spec'd here. Actual brand copy — taglines, landing-page lines, product strings, marketing blurbs, error messages, onboarding — is the brand owner's to write. This spec does not include sample copy.
 
 ## Don'ts
 
