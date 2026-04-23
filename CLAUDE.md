@@ -23,10 +23,6 @@ Never change these without updating both this file and `brand/decisions.md`.
 | What's the palette in detail? | `brand/palette/palette.md` |
 | What happened in a past session? | `brand/history/` |
 
-## Active one-shot task
-
-If `first_steps_temp.md` exists at the repo root, read and execute it, then delete it. Do not skip this — the repo is not organized until that task runs.
-
 ## Working conventions
 
 - Source files (`.ai`) go in `source/` subdirectories
@@ -44,4 +40,4 @@ If `first_steps_temp.md` exists at the repo root, read and execute it, then dele
 - Favicon (32): locked, exports done
 - Lockups: locked, exports done
 - Guidelines doc: done (v1.0)
-- Folder structure: pending until `first_steps_temp.md` runs
+- Folder structure: done (v1.0)
