@@ -26,7 +26,9 @@ The combat palette is **out of brand scope**. It lives inside the frame but isn'
 
 The logomark is pixel art. The combat mode is voxel-rendered. Both sit in the same craft-computational aesthetic lineage — which the brand frame otherwise underrepresents. To acknowledge the game register in the frame without adopting the combat palette, **dithering replaces smooth interpolation anywhere a gradient would otherwise appear.** Smooth CSS / SVG gradients are forbidden anywhere in the brand. If a crossfade between two colors is needed, it is rendered as a stepped Bayer dither.
 
-This is a stronger claim than "dithering is a texture device." It means the technique is locked into every gradient moment the brand produces — hero backgrounds, section dividers, loading states, transitions between narrative and combat mode, data-visualisation gradients. The gradient *is* the dither.
+This is a stronger claim than "dithering is a texture device." It means the technique is locked into every gradient moment the brand produces — footer transitions, splash / loading screens, narrative → combat transitions in-product, error and 404 screens, social / OG share images, and print accents. The gradient *is* the dither.
+
+The rule has a practical consequence: the brand only uses the technique where genuine color contrast is committed to. Website section dividers look appealing in brand-guideline isolation but fail in real page layouts where most section transitions are cream-on-cream and have no contrast to dither between. The rule isn't "dither every section break"; it's "wherever the brand commits to a high-contrast color transition, that transition is dithered."
 
 Reference pin: Lucas Pope's **Return of the Obra Dinn**. 1-bit ordered dithering replaces smooth shading throughout the game; the distinctive look comes from the technique being applied everywhere, not from sprinkling it in. Mythrun does the same: whenever a gradient is rendered, it is rendered dithered.
 

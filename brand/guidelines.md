@@ -130,10 +130,10 @@ Mythrun doesn't do smooth gradients. **Every gradient in the brand is rendered a
 | Parameter | Value |
 |-----------|-------|
 | Threshold matrix | 4×4 Bayer |
-| Cell size | 8 px at canonical scale (scale proportionally for different output sizes; grain stays visible) |
+| Cell size | Responsive to context. 6 px at hero / full-bleed scale; 8 px at preview / small-surface scale. Constant: the dither grain must stay visible at display size. If it reads as noise, scale up. |
 | Chaos blend | 15% pseudorandom, 85% ordered Bayer |
 | Default axis | Vertical (ground above, accent below) |
-| Horizontal axis | Allowed for section-break ribbons |
+| Horizontal axis | Allowed |
 | Radial axis | Forbidden |
 | Composition | Two-color, ground→accent. No three-stop gradients. |
 
@@ -149,23 +149,25 @@ Combinations outside these pairings — e.g. `ember` ground or semantic colors (
 
 ### Allowed uses
 
-- Marketing hero backgrounds (wordmark or stacked lockup placed on the pure-ground portion of the panel, above the dither band).
-- Section dividers in long-form documents (horizontal dither ribbons separating content blocks).
-- Loading and transition screens in the product.
-- Narrative-to-combat mode transitions in-product (conceptual — not yet spec'd).
-- Data visualisation — dither-density as a quantitative axis in charts.
-- Print accents: business cards, posters, merch.
+The technique only applies where the brand commits to a genuine high-contrast color transition. In practice that's a short, curated set:
+
+- **Footer.** The canonical use. Page content (cream) dithers down into the dark footer bar. The transition sits at the bottom of every page and is instantly recognizable as a Mythrun gesture.
+- **Splash / loading screens in-product.** Full-bleed dark compositions with the wordmark sitting on the pure-ground portion; dither carries the anticipation beat before a session or scene resolves.
+- **Narrative → combat transitions in-product.** The signature moment. Cream narrative canvas dithers into the darker voxel-combat canvas when combat begins. High contrast is guaranteed by the two modes having genuinely different palettes.
+- **Error / 404 / offline screens.** Full-bleed dark treatment with the wordmark above and dither below. Dramatic because these screens already commit to a mood shift.
+- **Social / OG share images.** Isolated compositions with full creative control; each card can commit to a dithered ground→accent. Makes Mythrun cards instantly recognizable in feeds.
+- **Print accents.** Posters, book covers, business cards, merch — physical pieces where the composition is curated.
 
 ### Forbidden uses
 
 - **Smooth (CSS / SVG linear / radial) gradients anywhere in the brand.** If a crossfade is needed, it is dithered. There is no smooth-gradient fallback.
+- **Website section dividers.** Dithering only reads where the brand commits to genuine color contrast; most site sections are cream-on-cream and have nothing for the dither to transition between. Section breaks use solid rules or whitespace, not dither.
 - Under body text. Reduces legibility.
 - Behind or overlapping the wordmark, mark, or favicon — these stay on solid ground. The lockup sits above the dither band, not inside it.
 - Radial gradients — even dithered. Radial reads as "glow," which is the opposite of the quiet frame.
 - Three-stop (or more) gradients. Two colors only.
 - `ember` as the ground color. Ground is always a paper step.
 - In semantic color ramps (success / warning / danger / info). Dithering is brand expression, not a UI-state signal.
-- Full-bleed across every touchpoint. Used sparingly — when a gradient moment is called for, not as a persistent texture.
 - Inside the combat-mode rendering itself. Combat has its own aesthetic; dithered gradients belong to the brand frame.
 
 ## Voice
